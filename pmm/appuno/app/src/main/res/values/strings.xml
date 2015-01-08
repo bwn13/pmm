@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">appuno</string>
+    <string name="Layout_Tabla"> Lay Tabla</string>
+    <string name="Layout_Grid"> Lay Grid</string>
+    <string name="Layout_Relative"> Lay Relative</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
