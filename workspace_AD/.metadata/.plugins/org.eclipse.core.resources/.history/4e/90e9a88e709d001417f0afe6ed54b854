@@ -1,0 +1,46 @@
+package serpis.ad;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
+@Table( name = "Categoria" )
+public class Categoria {
+	
+	
+	private String nombre;
+    private Long id;
+
+	public Categoria(String nombre, Long id) {
+		// for application use, to create new events
+		this.nombre = nombre;
+		this.id = id;
+	}
+
+	
+    
+	   private void setId(Long id) {
+		this.id = id;
+       }
+	   private String getNombre() {
+			return nombre;
+		}
+
+		private void setNombre(String nombre) {
+			nombre = nombre;
+		}
+
+		private int getId() {
+			return id;
+		}
+
+		
+		public Categoria() {
+			// this form used by Hibernate
+		}
+	
+}
