@@ -20,6 +20,10 @@ public class HibernateCategoria {
 		showCategorias();
 		System.out.println("Añado categorias");
 		persistNuevasCategorias();
+		showCategorias();
+		
+		System.out.println("Elimino categorias con id = ?");
+		deleteCategoriasbyID();
 		
 		showCategorias();
 		
@@ -33,7 +37,7 @@ public class HibernateCategoria {
 		entitymanager.getTransaction().begin();
 		
 		Categoria categoria = new Categoria ();
-		categoria.setNombre("Nueva con hibernate" + new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss").format (new Date()));
+		categoria.setNombre("Hibernate " + new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss").format (new Date()));
 		
 		entitymanager.persist(categoria);
 		
@@ -53,6 +57,18 @@ public class HibernateCategoria {
 		
 		entitymanager.getTransaction().commit();
 		entitymanager.close();
+	}
+	
+	public static void deleteCategoriasbyID(){
+		
+		EntityManager entitymanager = entityManagerFactory.createEntityManager();
+		
+		 Categoria categoria = entitymanager.find(Categoria.class, 1);
+		 
+		 entitymanager.getTransaction().begin();
+		 entitymanager.remove(categoria);
+		 entitymanager.getTransaction().commit();
+		 entitymanager.close();
 	}
 	
 }
